@@ -122,9 +122,6 @@ nav h1 a {
   width: 100%;
   background-color: #ccc;
 }
-.map-in-index {
-  height: 400px;
-}
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
@@ -301,10 +298,11 @@ button {
     width: 100%;
     padding: 140px 40px 30px;
   }
+  .map-in-index {
+    height: 100%;
+  }
   #map-container {
-    height: 30vh;
-    padding: 40px 30px;
-    background: transparent;
+    height: 35vh;
   }
   #reviews-container {
     width: 100%;
@@ -322,6 +320,9 @@ button {
 }
 
 @media screen and (min-width:960px) {
+  .map-in-index {
+    height: 400px;
+  }
   #restaurants-list {
     grid-template-columns: 33% 34% 33%;
   }
