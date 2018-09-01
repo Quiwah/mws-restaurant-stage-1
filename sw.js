@@ -1,4 +1,5 @@
-let cacheName = 'restaurant-cache-v1';
+//Save the static cashes
+let cacheName = 'restaurant-cache1';
 let cache;
 
 self.addEventListener('install', function(event) {
@@ -19,13 +20,15 @@ self.addEventListener('install', function(event) {
     );
 });
 
-let cacheName2 = 'restaurant-cache-v2';
+//
+let cacheName2 = 'restaurant-cache2';
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(
         caches.match(event.request)
         .then(function(response) {
             if (response) {
+                //if there was cache return the response
                 return response;
             } else {
                 //if there was no caches
@@ -38,13 +41,14 @@ self.addEventListener('fetch', function(event) {
                     })
                 })
                 .catch(function() {
-                    //for errors
+                //catching errors
                 });
             }
         })
     );
 });
 
+//Delete old caches
 self.addEventListener('activate', function(event) {
     event.waitUntil(
         caches.keys()
